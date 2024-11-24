@@ -3,8 +3,8 @@ import slugify from "slugify";
 import fs from "fs";
 import path from "path";
 import { upload } from "./utils/multer.js";
-import dotenv from "dotenv";
 import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv";
 
 dotenv.config();
 
