@@ -1,10 +1,13 @@
 import express from "express"
 import { Cashfree } from "cashfree-pg";
 import { nanoid } from "nanoid"
+import dotenv from "dotenv";
+
+dotenv.config();
 const router = express.Router();
 
-Cashfree.XClientId = "TEST1034462624299044a9235de8dd8762644301";
-Cashfree.XClientSecret = "cfsk_ma_test_0933fce5d0ac81df835f88b50a4d6328_8db70960";
+Cashfree.XClientId = process.env.CASHFREE_CLIENT_ID;
+Cashfree.XClientSecret = process.env.CASHFREE_CLIENT_SECRET;
 Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
 
 
