@@ -2,7 +2,7 @@ import userModel from "../../models/userModel.js";
 import session from "express-session"
 import passport from "passport"
 import { Strategy as LocalStrategy } from "passport-local";
-import { loginUser } from "../../firebase/auth.js";
+
 
 
 export const signIn = async (req, res) => {
@@ -10,7 +10,7 @@ export const signIn = async (req, res) => {
 
     const { email, password } = req.body;
 
-    // loginUser(email,password)
+
 
     const user = await userModel.findOne({ email })
 

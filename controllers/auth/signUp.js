@@ -2,7 +2,7 @@ import slugify from "slugify";
 import userModel from "../../models/userModel.js";
 import dotenv from "dotenv"
 import JWT from "jsonwebtoken"
-import { createUser } from "../../firebase/auth.js";
+
 
 dotenv.config()
 
@@ -13,7 +13,7 @@ export const signUp = async (req, res) => {
     try {
         const { name, email, password, token,phoneNumber,addresses } = req.body;
 
-        // createUser(email,password,name,phoneNumber)
+ 
         const exisitingUser = await userModel.findOne({ email })
 
         console.log(exisitingUser);

@@ -11,6 +11,7 @@ export const createOrder = async (req, res) => {
     // console.log("userId", userId);
     // console.log("req.body", req.body);
     // console.log("quantity", quantity);
+    // console.log("productId", productId);
 
 
     try {
@@ -21,7 +22,7 @@ export const createOrder = async (req, res) => {
             quantity: quantity[index]
         }));
 
-        // console.log("orderProducts:", orderProducts); // Log the final order products
+        console.log("orderProducts:", orderProducts); // Log the final order products
 
 
 
@@ -49,7 +50,7 @@ export const createOrder = async (req, res) => {
                 { $push: { orderProduct: { $each: orderProducts } } }
             )
 
-            return res.status(400).send({
+            return res.status(201).send({
                 success: true,
                 message: "User already has an existing order",
                 order
