@@ -12,10 +12,19 @@ const userSchema = new mongoose.Schema(
       required: true,
       default: () => nanoid(10)
     },
+    googleId: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
       trim: true,
+    },
+    username: {
+      type: String,
+      required: true,
+      default: "null",
     },
     slug: {
       type: String,
@@ -31,6 +40,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       // required: true,
     },
+    // picture: String,
     phoneNumber: {
       type: String,
       default: "null",

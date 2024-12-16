@@ -14,12 +14,16 @@ const router = express.Router();
 
 
 // sign-in user
-// router.post("/sign-in",passport.authenticate("local",{
-//   successRedirect:'/',
-//   failureRedirect:"/a/sign-in",
-//   failureFlash:true
-// }))
+// router.post("/sign-in",passport.authenticate("local",{failureRedirect:"/sign-up"}),(req,res)=>{
+//   res.send(req.user)
+// })
+// router.post("/sign-in",signIn)
 router.post("/sign-in",signIn)
+
+
+
+
+
 // sign-up user
 router.post("/sign-up",signUp)
 //  update user
